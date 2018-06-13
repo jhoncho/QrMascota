@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Qr Mascota</string>
+
+
+    <string name="nombre_completo">Nombre Completo</string>
+    <string name="correo">Correo Electronico</string>
+    <string name="password">Contraseña</string>
+    <string name="confirmar_password">Confirmar Contraseña</string>
+    <string name="crear_cuenta">Crear Cuenta</string>
+    <string name="iniciar_sesion">Iniciar Sesion</string>
+
+    /*pantalla de crear usuario*/
+
+    <string name="nombre">Nombre</string>
+    <string name="apellido">Apellido</string>
+    <string name="fotousuario">foto usuario</string>
+    <string name="fotomascota">Foto Mascota</string>
+    <string name="cuentamascota">Añadir Mascota</string>
+    <string name="cargarimagen">Subir Imagen</string>
+    <string name="guardar">Guadar</string>
+    <string name="usuario">Usuario</string>
+    <string name="telefono">Telefono</string>
+
+    /*pantalla de crear mascota*/
+
+    <string name="codigodeactivacion">Codigo de Activacion</string>
+    <string name="nombremascota">Nombre de tu mascota</string>
+    <string name="Raza">Raza</string>
+    <string name="FechaNacimiento">Fecha de Nacimiento</string>
+    <string name="Esterilizado">Esterilizado</string>
+    <string name="DatosdeVeterinario">Datos de veterinario</string>
+
+    /*descripcion de las imagenes*/
+
+    <string name="EscanearQR">Escanear QR</string>
+    <string name="editarusuario">Editar Usuario</string>
+    <string name="imagen">LogoImagen</string>
+    <string name="logo_empresa">Logo de la empresa</string>
+    <string name="imagen_facebook">Logo de facebook</string>
+
+    /*Pantalla Login*/}
+    <string name="ingresar">Ingresar</string>
+</resources>

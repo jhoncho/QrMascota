@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".crear_mascota">
+
+    <ImageView
+        android:id="@+id/fotomascota"
+        android:layout_width="135dp"
+        android:layout_height="135dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp"
+        android:contentDescription="@string/fotomascota"
+        app:srcCompat="@drawable/mascotas" />
+
+    <Button
+        android:id="@+id/btnsubirimagenperro"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/fotomascota"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="121dp"
+        android:text="@string/cargarimagen"
+        android:onClick="onclick" />
+
+    <EditText
+        android:id="@+id/txtnombremascota"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnsubirimagenperro"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:ems="10"
+        android:hint="@string/nombremascota"
+        android:inputType="textPersonName" />
+
+    <AutoCompleteTextView
+        android:id="@+id/autoCompleteTextView"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:hint="@string/Raza" />
+
+    <EditText
+        android:id="@+id/txtfechanacimiento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/autoCompleteTextView"
+        android:layout_alignStart="@+id/autoCompleteTextView"
+        android:layout_below="@+id/autoCompleteTextView"
+        android:clickable="true"
+        android:ems="10"
+        android:focusable="false"
+        android:hint="@string/FechaNacimiento"
+        android:inputType="date"
+        android:maxLines="1" />
+
+    <EditText
+        android:id="@+id/txtesterelizado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/txtfechanacimiento"
+        android:layout_below="@+id/txtfechanacimiento"
+        android:ems="10"
+        android:hint="@string/Esterilizado"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/txtdatosveterinario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/txtesterelizado"
+        android:layout_below="@+id/txtesterelizado"
+        android:ems="10"
+        android:hint="@string/DatosdeVeterinario"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/txtcodigo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/fotomascota"
+        android:layout_below="@+id/txtdatosveterinario"
+        android:ems="10"
+        android:hint="@string/codigodeactivacion"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/btnguardar"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="46dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/guardar"/>
+
+
+</RelativeLayout>
