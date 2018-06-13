@@ -55,18 +55,14 @@ public class crear_usuario extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.crear_usuario);
         /*para llenar el formulario de crear usuario*/
-          txtNombre= findViewById(R.id.txtNombre);
-          txtapellido=findViewById(R.id.txtapellido);
-          txtcorreo=findViewById(R.id.txtcorreo);
+          txtNombre= findViewById(R.id.etnombre);
+          txtapellido=findViewById(R.id.etapellido);
+          txtcorreo=findViewById(R.id.etcorreo);
           ettelefono=findViewById(R.id.ettelefono);
-          txtcontra=findViewById(R.id.txtcontra);
+          txtcontra=findViewById(R.id.etcontrasena);
 
-          btncrearcuenta=findViewById(R.id.btncrearusuario);
-
-          btncrearcuenta.setOnClickListener(this);
-
-
-
+          btncrearcuenta= (Button) findViewById(R.id.btncrearusuario);
+          //btncrearcuenta.setOnClickListener(this);
 
 
         /*aqui termina para llenardatos*/
@@ -74,7 +70,8 @@ public class crear_usuario extends AppCompatActivity implements View.OnClickList
         //desde aqui hasta
         Button siguiente=(Button) findViewById(R.id.btnmascota);
        // Button siguiente = (Button) findViewById(R.id.btnmascota);
-        siguiente.setOnClickListener(new View.OnClickListener(){
+        siguiente.setOnClickListener(new View.OnClickListener()
+        {
 
             @Override
             public void onClick(View v) {
@@ -96,6 +93,51 @@ public class crear_usuario extends AppCompatActivity implements View.OnClickList
             botonCargar.setEnabled(false);
         }
     }
+
+
+
+    //para boton crearusuario
+    @Override
+    public void onClick(View view)
+    {
+
+        final String nombre=txtNombre.getText().toString();
+        final String apellido=txtapellido.getText().toString();
+        final String email=txtcorreo.getText().toString();
+        final int celular= Integer.parseInt(ettelefono.getText().toString());
+        final String contrasena=txtcontra.getText().toString();
+
+        Response.Listener<String> respoListener = new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try {
+                    JSONObject jsonResponse=new JSONObject(response);
+                    boolean succes=jsonResponse.getBoolean("succes");
+
+                    if (succes)
+                    {
+                        //para cambiar de activity
+                        Intent intent=new Intent(crear_usuario.this,Menu.class);
+                        crear_usuario.this.startActivity(intent);
+                    }else{
+                        AlertDialog.Builder builder = new AlertDialog.Builder(crear_usuario.this);
+                        builder.setMessage("Error de Registro").setNegativeButton("Retry",null).create().show();
+
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+
+        RegisterRequest registerRequest=new RegisterRequest(nombre,apellido,email,celular,contrasena, respoListener);
+        RequestQueue queue= Volley.newRequestQueue(crear_usuario.this);
+        queue.add(registerRequest);
+
+
+    }
+
 
         /* APARTIR DE ANDROID N SE TIENE QUE PEDIR PERMISO PARA UTLIZAR LOS SERVICIOS
         CODIGO PARA PEDIR PERMISOS PARA LEER LA CAMARA Y LA MEMORIA EXTERNA */
@@ -187,11 +229,11 @@ public class crear_usuario extends AppCompatActivity implements View.OnClickList
 
     }
     /*FIN DE DIALOGO*/
- /*   public void onclick(View view) {
+        public void onclick(View view) {
 
-cargarimagen();
+        cargarimagen();
 
-    }*/
+    }
 
     private void cargarimagen() {
 
@@ -269,48 +311,6 @@ cargarimagen();
             }
         }
     }
-//para boton crearusuario
-    @Override
-    public void onClick(View view)
-    {
 
-
-        final String nombre=txtNombre.getText().toString();
-        final String apellido=txtapellido.getText().toString();
-        final String email=txtcorreo.getText().toString();
-        final int celular= Integer.parseInt(ettelefono.getText().toString());
-        final String contrasena=txtcontra.getText().toString();
-
-        Response.Listener<String> respoListener = new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                try {
-                    JSONObject jsonResponse=new JSONObject(response);
-                    boolean success=jsonResponse.getBoolean("success");
-
-                    if (success)
-                    {
-                        //para cambiar de activity
-                        Intent intent=new Intent(crear_usuario.this,Menu.class);
-                        crear_usuario.this.startActivity(intent);
-                    }else{
-                        AlertDialog.Builder builder = new AlertDialog.Builder(crear_usuario.this);
-                        builder.setMessage("Error de Registro").setNegativeButton("Retry",null).create().show();
-
-                    }
-
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-        };
-
-        RegisterRequest registerRequest=new RegisterRequest(nombre,apellido,email,celular,contrasena, respoListener);
-        RequestQueue queue= Volley.newRequestQueue(crear_usuario.this);
-        queue.add(registerRequest);
-
-
-    }
 }
 
