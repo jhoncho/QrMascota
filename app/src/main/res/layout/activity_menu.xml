@@ -11,12 +11,38 @@
         android:id="@+id/imageButton"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="63dp"
-        android:layout_marginTop="73dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="71dp"
         android:contentDescription="@string/EscanearQR"
         android:onClick="EscanerQr"
         app:srcCompat="@drawable/qrperro" />
+
+    <TextView
+        android:id="@+id/txttituloqr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="@string/EscanearQR"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/txtpedirplaca"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/pedirplaca"
+        android:textSize="20sp"/>
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="61dp"
+        app:srcCompat="@drawable/plaquita" />
 
 </RelativeLayout>

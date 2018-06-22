@@ -8,6 +8,8 @@
     <string name="confirmar_password">Confirmar Contraseña</string>
     <string name="crear_cuenta">Crear Cuenta</string>
     <string name="iniciar_sesion">Iniciar Sesion</string>
+    <string name="Scanner">Scanner Qr</string>
+    <string name="pedirplaca">Solicita tu plaquita</string>
 
     /*pantalla de crear usuario*/
 
@@ -38,6 +40,6 @@
     <string name="logo_empresa">Logo de la empresa</string>
     <string name="imagen_facebook">Logo de facebook</string>
 
-    /*Pantalla Login*/}
+    /*Pantalla Login*/
     <string name="ingresar">Ingresar</string>
 </resources>
