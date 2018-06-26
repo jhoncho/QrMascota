@@ -37,12 +37,22 @@
         android:textSize="20sp"/>
 
     <ImageButton
-        android:id="@+id/imageButton3"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:id="@+id/imbwhat"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="61dp"
-        app:srcCompat="@drawable/plaquita" />
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="97dp"
+        android:layout_marginStart="69dp"
+        app:srcCompat="@drawable/logowhatsapp" />
+
+    <ImageButton
+        android:id="@+id/imbFace"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/imbwhat"
+        android:layout_marginEnd="69dp"
+        app:srcCompat="@drawable/logofacebook" />
 
 </RelativeLayout>
