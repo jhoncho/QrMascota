@@ -13,8 +13,8 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="85dp"
-        android:contentDescription="@string/fotomascota"
-        app:srcCompat="@drawable/logoqrmascota" />
+        android:background="@drawable/logoqrmascota"
+        android:contentDescription="@string/fotomascota" />
 
     <EditText
         android:id="@+id/etusuario"
